@@ -25,6 +25,10 @@ const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images 
 const showImages = (images) => {
+  if(images.length === 0 || searchInput.value === ""){
+    alert("The search box cannot be empty or item does not exist");
+    imagesArea.style.display = 'none';
+  }else{
   imagesArea.style.display = 'block';
   gallery.innerHTML = '';
   // show gallery title
@@ -36,7 +40,7 @@ const showImages = (images) => {
     gallery.appendChild(div)
     toggleSpinner(false);
   })
-   
+}
 }
 
 const getImages = (query) => {
